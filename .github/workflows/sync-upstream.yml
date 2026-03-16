@@ -22,6 +22,11 @@ jobs:
       - name: Fetch upstream
         run: git fetch upstream main
 
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Rebase onto upstream
         run: |
           git checkout main
